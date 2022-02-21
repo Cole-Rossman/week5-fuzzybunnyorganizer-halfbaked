@@ -2,18 +2,21 @@ export function renderFamily(family) {
     const div = document.createElement('div');
     div.classList.add('family');
 
-    const p = document.createElement('p');
-    p.classList.add('family-name');
-    p.textContent = family.name;
+    const h3 = document.createElement('h3');
+    h3.textContent = family.name;
 
-    div.append(p);
+    div.append(h3);
     return div;
 }
 
 export function renderBunny(bunny) {
-    const p = document.createElement('p');
-    p.classList.add('bunny-name');
-    p.textContent = bunny.name;
+    const div = document.createElement('div');
+    div.classList.add('bunnies');
+
+    const bunnyDiv = document.createElement('div');
+    bunnyDiv.classList.add('bunny');
+    bunnyDiv.textContent = bunny.name;
     
-    return p;
+    div.append(bunnyDiv);
+    return div;
 }
