@@ -23,6 +23,11 @@ async function displayFamilies() {
         for (let bunny of family.fuzzy_bunnies) {
             const bunnyEl = renderBunny(bunny);
 
+            bunnyEl.addEventListener('click', async () => {
+                await deleteBunny(bunny.id);
+                displayFamilies();
+            });
+            
             familyEl.append(bunnyEl);
         }
 
